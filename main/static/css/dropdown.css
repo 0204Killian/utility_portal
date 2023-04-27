@@ -1,0 +1,132 @@
+/**************************/
+/* dropdown with checkbox */
+/**************************/
+
+.dropdown-checkbox {
+    position: relative;
+}
+.dropdown-checkbox-closed {
+    height: 0;
+}
+.dropdown-checkbox * {
+    box-sizing: border-box;
+}
+.dropdown-checkbox > .menu {
+    display: block;
+    width: 100%;
+}
+.checkbox-li {
+    margin: 2.5% 0;
+    width: 100%;
+}
+.li-checkbox {
+    transform: scale(1.2);
+    width: 5%;
+    max-width: 5%;
+    margin: 0 3% 0 1%;
+}
+.li-checkbox:hover,
+.checkbox-li:hover {
+    cursor: default;
+}
+
+/*************/
+/* drop down */
+/*************/
+
+.dropdown {
+    min-width: 10em;
+    position: relative;
+}
+
+.dropdown * {
+    box-sizing: border-box;
+}
+
+.select {
+    background: var(--entegro-pink);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 0.5em;
+    padding: 1em;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.select-clicked {
+    border: 2px solid black;
+    box-shadow: 0 0 0.8em black;
+}
+
+.select:hover {
+    background-color: var(--entegro-pink-darker);
+}
+
+.caret {
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #fff;
+    transition: 0.3s;
+}
+
+.caret-rotate {
+    transform: rotate(180deg);
+}
+.caret-rotate-forward-90 {
+    transform: rotate(-90deg);
+}
+
+.menu {
+    list-style: none;
+    padding: 0.2em 0.5em;
+    background: var(--entegro-pink);
+    border: 1px black solid;
+    box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+    border-radius: 0.5em;
+    color: var(--entegro-white);
+    position: absolute;
+    top: 3em;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+    opacity: 0;
+    display: none;
+    visibility: hidden;
+    transition: 0.2s;
+    z-index: 1;
+}
+
+.menu li {
+    margin: 0.3em 0;
+    border-radius: 0.5em;
+    cursor: pointer;
+    text-align: left;
+}
+
+.scrollable li:hover {
+    background-color: var(--darker-grey);
+}
+.menu li a {
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.active {
+    --lorem:ipsum;
+}
+
+.menu-open {
+    display: flex;
+    flex-direction: column;
+    opacity: 1;
+    max-height: 500%;
+    visibility: visible;
+}
+.scrollable {
+    overflow-y: scroll;
+}

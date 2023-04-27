@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+
+<!-- had to move static files to home -->
+<!-- for some reason if you redeclare a block in another file it
+won't use content from other block previously declared -->
+
+{% block content %}
+<!-- navbar -->
+<nav class="navbar">
+    <h1 class="comp-title">Utilities Portal</h1>
+    <!-- added the below href -->
+    <!-- caret (shown on smaller screen sizes to toggle menu)-->
+    <a href="#" class="toggle-button">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </a>
+    <!-- navbar items-->
+    <div class="navbar-links">
+        <ul>        
+            <li>
+                <!-- logout -->
+                <div class="dropdown">
+                    <div class="select">
+                        <span class="selected">{{user.get_name_formatted}}</span>
+                        <div class="caret"></div>
+                    </div>
+                    <ul class="menu">
+                        <!-- add href -->
+                        <li><a href="/login">Logout</a></li>
+                    </ul>
+                </div>
+                <!-- end of logout -->
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+
+

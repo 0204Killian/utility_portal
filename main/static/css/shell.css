@@ -1,0 +1,245 @@
+/* css for shell.html */
+
+:root {
+    /* global variables */
+    --entegro-pink-darker: rgba(136, 12, 95, 0.6);
+    --entegro-pink: #c51189;
+    --entegro-white: rgba(255,253,254,255);
+    --light-grey: rgb(240, 240, 240);
+    --darker-grey: rgb(230, 230, 230);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0; 
+    background-color: var(--light-grey);
+    overflow-y: scroll !important;
+}
+main {
+    margin-top: 5%;
+    height: 100%;
+    max-width: 99%;
+}
+
+
+/**********/
+/* navbar */
+/**********/
+.navbar { 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--entegro-pink);
+    color: var(--entegro-white);
+    box-shadow: 0 .05rem .4rem black;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.comp-title {
+    margin: .5rem .75rem;
+    text-align: center;
+}
+
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    z-index: 99;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links > li:hover {
+    background: var(--entegro-pink-darker);
+}
+
+.navbar-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 2%; /* changed */
+    display: block;
+}
+
+.navbar-links li:hover {
+    background-color: var(--entegro-pink-darker)
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+/* font details */
+/* font details */
+.navbar * {
+    font-weight: 500;
+}
+
+.main-header {
+    margin-left: 1%;
+    font-size: 2.5rem;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.comp-title {
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar-links .selected {
+    font-weight: 500;
+}
+
+/*****************/
+/* media queries */
+/*****************/
+
+@media (max-width: 1600px) {
+    main {
+        margin-top: 6%;
+    }
+}
+@media (max-width: 1400px) {
+    main {
+        margin-top: 7.5%;
+    }
+}
+
+@media(max-width: 1050px) {
+    main {
+        margin-top: 9%;
+    }
+    .main-header {
+        font-size: 2.25rem;
+    }
+    .comp-title {
+        font-size: 1.35rem;
+    } 
+    .navbar-links li {
+        font-size: 95%;
+    }
+}
+
+@media (max-width: 860px) {
+    main {
+        margin-top: 12%;
+    }
+    .main-header {
+        font-size: 2.15rem;
+    }
+    .comp-title {
+        font-size: 1.25rem;
+    } 
+    .navbar-links li {
+        font-size: 92.5%;
+    }
+}
+
+@media (max-width: 680px) {
+    main {
+        margin-top: 14%;
+    }
+    .main-header {
+        font-size: 1.8rem;
+    }
+    .comp-title {
+        font-size: 1.125rem;
+    } 
+    .navbar-links li {
+        font-size: 90%;
+    }
+}
+
+/* navbar becomes dropdown */
+@media (max-width: 600px) {
+    .toggle-button {
+        display: flex;
+    }
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-;
+    }
+    .navbar-links li {
+        text-align: left;
+    }
+    .navbar-links li a {
+        padding: .5rem 1rem;
+    }
+    .navbar-links.active {
+        display: flex;
+        height: 12em
+    }
+    .main-header {
+        font-size: 1.75rem;
+    }
+}
+
+@media(max-width: 520px) {
+    main {
+        margin-top: 15%;
+    }
+    .navbar-links li {
+        font-size: 87.5%;
+    }
+    .main-header {
+        font-size: 1.6rem;
+    }
+
+    .toggle-button {
+        top: 1rem;
+        width: 25px;
+        height: 18px;
+    }
+
+    .toggle-button .bar {
+        height: 2px;
+    }
+
+}
+
+@media (max-width: 380px) {
+    main {
+        margin-top: 20%;
+    } 
+    .navbar-links li {
+        font-size: 80%;
+
+    }
+    .comp-title {
+        font-size: 1.0675rem;
+    } 
+    .main-header {
+        font-size: 1.6rem;
+    }
+}

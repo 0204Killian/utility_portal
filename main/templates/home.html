@@ -1,0 +1,57 @@
+{% extends 'shell.html'%}
+{% block title %} Home {% endblock %}
+
+{% load static %}
+{% block static_content %}
+<script src="{% static '/js/dropdown.js' %}"></script>
+<link rel="stylesheet" href="{% static '/css/dropdown.css' %}">
+<link rel="stylesheet" href="{% static '/css/shell.css' %}">
+<link rel="stylesheet" href="{% static '/css/home.css' %}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin="anonymous"/>
+<script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block main %}
+<main>
+  <div id="container">
+      <div id="sidebar">
+          <center><h3>Layers</h3></center>
+          <div id ="checkboxes">
+          <div id="esb">
+          <input type="checkbox" id="cable" name="cb1" autocomplete="off">
+          <label for="cb1">Cable Routes</label><br>
+          <div hidden id="cable_img">
+            <img src="http://192.168.1.150:8001/geoserver4/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Underground_Route" alt="Legend" /><br>
+            <img src="http://192.168.1.150:8001/geoserver4/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=UndergroundUtilityBox" alt="Legend" />
+          </div>
+          </div>
+          <div id="gas">
+          <input type="checkbox" id="gas" name="cb2" autocomplete="off">
+          <label for="cb2">Gas Network</label><br>
+          <div hidden id="gas_img">
+            <img src="http://192.168.1.150:8001/geoserver3/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=Gas_lines" alt="Legend" /><br>
+            <img src="http://192.168.1.150:8001/geoserver3/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=Gas_points2" alt="Legend" />
+          </div>
+          </div>
+          <div id="water">
+          <input type="checkbox" id="esb" name="cb3" autocomplete="off">
+          <label for="cb3">ESB Network</label><br>
+          <div hidden id="esb_img">
+            <img src="http://192.168.1.150:8001/geoserver2/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=hv_lines_view" alt="Legend" /><br>
+            <img src="http://192.168.1.150:8001/geoserver2/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=lvmv_lines_view" alt="Legend" /><br>
+            <img src="http://192.168.1.150:8001/geoserver2/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=lvmv_poles_view" alt="Legend" />
+          </div>
+        </div>
+      </div>
+      </div>
+      <div id="map"></div>
+  </div>
+</main>
+
+<script src="{% static 'lib/L.Geoserver.js' %}"></script>
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

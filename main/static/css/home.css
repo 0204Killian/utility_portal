@@ -1,0 +1,29 @@
+:root {
+    /* global variables */
+    --entegro-pink-darker: rgba(136, 12, 95, 0.6);
+    --entegro-pink: #c51189;
+    --entegro-white: rgba(255,253,254,255);
+    --light-grey: rgb(240, 240, 240);
+    --darker-grey: rgb(230, 230, 230);
+}
+
+html, body {
+    overflow: hidden;
+  }
+
+  #container {
+    display: flex;
+    height: calc(86vh)
+  }
+
+  #sidebar {
+    margin-left: 8px;
+    width: 20%;
+    background-color: white;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #map {
+    width: 95%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  }

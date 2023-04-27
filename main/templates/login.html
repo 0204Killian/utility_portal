@@ -1,0 +1,29 @@
+{% extends 'base.html'%}
+{% block title %} Login {% endblock %}
+
+{% load static %}
+{% block static_content %}
+<link rel="stylesheet" href="{% static '/css/login.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="login">
+        <img src="{% static '/images/entegro_logo_white.jfif' %}" alt="Entegro Logo" class="login-logo"/>
+        <h1 class="text-center">Utilities Portal</h1>
+        {% if error_message %}
+            <p class="error-message">{{error_message}}</p>
+        {% endif %}
+        <form class="needs-validation" method="post" action="{% url 'login' %}">
+            {% csrf_token %}
+            <div class="form-group was-validated">
+                <label class="form-label" for="email">Email address</label>
+                <input class="form-control" type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group was-validated">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password" required>
+            </div>
+            <input  class="btn btn-success w-100 btn-custom-color"type="submit" value="SIGN IN">
+        </form>
+    </div>
+{% endblock %}
