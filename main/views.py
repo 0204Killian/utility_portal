@@ -2,10 +2,25 @@ from django.contrib.auth import login, logout
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
 from .models import User
+from django.http import JsonResponse
+from django.http import HttpResponse
+import json
+import base64
+import requests
+import urllib.parse
+from io import BytesIO
+import io
+from PIL import Image
+from .water_layer_getter import water_layers, img_getter
 
 @login_required
 def home_view(req):
     return render(req, "home.html")
+
+def water_getter(request, url):
+    url = urllib.parse.unquote(url)
+    context = {'titles': water_layers.get_layer_names(url)}
+    return JsonResponse(context)
 
 def login_view(req):  
     """view for login page."""

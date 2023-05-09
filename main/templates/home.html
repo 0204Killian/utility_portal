@@ -23,7 +23,7 @@
           <div id ="checkboxes">
           <div id="esb">
           <input type="checkbox" id="cable" name="cb1" autocomplete="off">
-          <label for="cb1">Cable Routes</label><br>
+          <label for="cb1">Eir UG Network</label><br>
           <div hidden id="cable_img">
             <img src="http://192.168.1.150:8001/geoserver4/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=Underground_Route" alt="Legend" /><br>
             <img src="http://192.168.1.150:8001/geoserver4/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=UndergroundUtilityBox" alt="Legend" />
@@ -37,7 +37,7 @@
             <img src="http://192.168.1.150:8001/geoserver3/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=Gas_points2" alt="Legend" />
           </div>
           </div>
-          <div id="water">
+          <div id="eir">
           <input type="checkbox" id="esb" name="cb3" autocomplete="off">
           <label for="cb3">ESB Network</label><br>
           <div hidden id="esb_img">
@@ -46,12 +46,41 @@
             <img src="http://192.168.1.150:8001/geoserver2/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetLegendGraphic&FORMAT=image/png&WIDTH=18&HEIGHT=20&LAYER=lvmv_poles_view" alt="Legend" />
           </div>
         </div>
+        <div id="waterDis">
+          <input type="checkbox" id="waterDis" name="cb4" autocomplete="off">
+          <label for="cb4">Water Distribution Network</label><br>
+          <div hidden id="waterDis_img">
+            <img src="{% static '/images/water_imgs/1.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/2.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/3.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/4.png' %}" width="250"/>
+          </div>
+        </div>
+        <div id="sewerStorm">
+          <input type="checkbox" id="sewerStorm" name="cb4" autocomplete="off">
+          <label for="cb4">Sewer Storm Water Network</label><br>
+          <div hidden id="sewerStorm_img">
+            <img src="{% static '/images/water_imgs/b1.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/b2.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/b3.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/b4.png' %}" width="250"/>
+          </div>
+        </div>
+        <div id="stormWater">
+          <input type="checkbox" id="stormWater" name="cb4" autocomplete="off">
+          <label for="cb4">Storm Water Network</label><br>
+          <div hidden id="stormWater_img">
+            <img src="{% static '/images/water_imgs/a1.png' %}" width="250"/>
+            <img src="{% static '/images/water_imgs/a2.png' %}" width="250"/>
+          </div>
+        </div>
       </div>
       </div>
       <div id="map"></div>
   </div>
 </main>
 
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script src="{% static 'lib/L.Geoserver.js' %}"></script>
 <script src="{% static 'js/home.js' %}"></script>
 {% endblock %}
